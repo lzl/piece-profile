@@ -1,0 +1,114 @@
+/* Mobile first queries */
+body {
+  max-width: 600px;
+  padding: 1rem;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.subtitle {
+  margin-bottom: 4rem;
+  font-size: 12px;
+  line-height: 1.2rem;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.post {
+  margin-bottom: 4rem;
+  line-height: 1.9rem;
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+  body {
+    max-width: 600px;
+    padding: 1rem;
+    font-size: 22px;
+  }
+
+  .subtitle {
+    margin-bottom: 5rem;
+    font-size: 14px;
+    line-height: 1.4rem;
+    color: rgba(0, 0, 0, 0.2);
+  }
+
+  .post {
+    margin-bottom: 5rem;
+    line-height: 1.7em;
+  }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  body {
+    max-width: 600px;
+    padding: 2rem;
+    font-size: 24px;
+  }
+
+  .subtitle {
+    margin-bottom: 6rem;
+    font-size: 16px;
+    line-height: 1.6rem;
+    color: rgba(0, 0, 0, 0.2);
+  }
+
+  .post {
+    margin-bottom: 6rem;
+    line-height: 2.4rem;
+  }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+  body {
+    max-width: 800px;
+    padding: 4rem;
+    font-size: 32px;
+  }
+
+  .title {
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    margin-bottom: 8rem;
+    font-size: 18px;
+    line-height: 1.8rem;
+    color: rgba(0, 0, 0, 0.2);
+  }
+
+  .subtitle p {
+    margin: 0;
+  }
+
+  .post {
+    margin-bottom: 8rem;
+    line-height: 3.2rem;
+  }
+}
+
+/* pace.js */
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: #000000;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}
