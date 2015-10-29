@@ -9,22 +9,26 @@ var handle = connection.subscribe("pieceSingleUserPosts", userId, limit);
 
 Tracker.autorun(function () {
   if (handle.ready()) {
-    console.log("subscription from", url, "is ready");
-    let cursor = Pieces.find();
-    let cursorHandle = cursor.observeChanges({
-      added: function (id, piece) {
-        if (Posts.findOne(id)) {
-          return;
-        } else {
-          console.log("added:", id);
-          piece._id = id;
-          Posts.insert(piece);
-        }
-      },
-      removed: function (id) {
-        console.log("removed:", id);
-        Posts.remove(id);
-      }
-    });
+    observe();
   }
 })
+
+var observe = function () {
+  console.log("subscription from", url, "is ready");
+  let cursor = Pieces.find();
+  let cursorHandle = cursor.observeChanges({
+    added: function (id, piece) {
+      if (Posts.findOne(id)) {
+        return;
+      } else {
+        console.log("added:", id);
+        piece._id = id;
+        Posts.insert(piece);
+      }
+    },
+    removed: function (id) {
+      console.log("removed:", id);
+      Posts.remove(id);
+    }
+  });
+};
