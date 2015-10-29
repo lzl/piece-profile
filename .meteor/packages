@@ -24,3 +24,6 @@ check
 audit-argument-checks
 force-ssl
 browser-policy
+kadira:flow-router-ssr
+kadira:react-layout
+peerlibrary:server-autorun
