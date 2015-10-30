@@ -2,7 +2,7 @@ App = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    let handle = Meteor.subscribe("allPosts");
+    let handle = Meteor.subscribe("allPosts", 100);
 
     return {
       loading: ! handle.ready(),
