@@ -10,6 +10,10 @@ Navbar = React.createClass({
         <div className="card-block">
           <a href="https://github.com/lzl/piece-profile" className="card-link">GitHub</a>
         </div>
+
+        <div className="card-footer">
+          <Follow />
+        </div>
       </div>
     );
   }
