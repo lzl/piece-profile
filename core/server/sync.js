@@ -1,7 +1,7 @@
-var url = Meteor.settings.url;
-var cloneId = Meteor.settings.cloneId;
+var hostname = Meteor.settings.public.hostname;
+var cloneId = Meteor.settings.public.cloneId;
 
-var connection = DDP.connect(url);
+var connection = DDP.connect(`http://${hostname}`);
 var limit = 100;
 
 RemotePieces = new Mongo.Collection('pieces', {connection: connection});
@@ -15,7 +15,7 @@ Tracker.autorun(function () {
 
 var observe = function () {
   console.log("observation begins");
-  console.log("URL:", url);
+  console.log("Hostname:", hostname);
   console.log("Clone ID:", cloneId);
   let cursor = RemotePieces.find();
   let cursorHandle = cursor.observeChanges({
