@@ -27,3 +27,4 @@ browser-policy
 kadira:flow-router-ssr
 kadira:react-layout
 peerlibrary:server-autorun
+mizzao:timesync

@@ -1,12 +1,12 @@
-Posts = new Mongo.Collection('posts');
+Pieces = new Mongo.Collection('pieces');
 
-Posts.allow({
+Pieces.allow({
   insert() { return false; },
   update() { return false; },
   remove() { return false; }
 });
 
-Posts.deny({
+Pieces.deny({
   insert() { return true; },
   update() { return true; },
   remove() { return true; }

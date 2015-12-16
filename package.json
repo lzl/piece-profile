@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A personal website powered by Meteor.",
   "scripts": {
-    "start": "meteor --settings settings-development.json",
+    "start": "meteor --port 5000 --settings settings-development.json",
     "deploy": "meteor deploy piece-profile.meteor.com --settings settings-production.json"
   }
 }

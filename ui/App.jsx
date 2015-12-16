@@ -2,20 +2,20 @@ App = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    let handle = Meteor.subscribe("allPosts", 100);
+    let handle = Meteor.subscribe("allPieces", 100);
 
     return {
       loading: ! handle.ready(),
-      posts: Posts.find({}, {sort: {createdAt: -1}}).fetch()
+      pieces: Pieces.find({}, {sort: {createdAt: -1}}).fetch()
     }
   },
 
-  renderPosts() {
+  renderPieces() {
     if (this.data.loading) {
       return <li className="list-group-item">Loading</li>
     }
-    return this.data.posts.map((post) => {
-      return <Post key={post._id} post={post} />;
+    return this.data.pieces.map((piece) => {
+      return <Piece key={piece._id} piece={piece} />;
     });
   },
 
@@ -28,7 +28,7 @@ App = React.createClass({
 
         <div className="row">
           <ul className="list-group">
-            {this.renderPosts()}
+            {this.renderPieces()}
           </ul>
         </div>
       </div>
