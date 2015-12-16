@@ -3,11 +3,11 @@ Piece = React.createClass({
     piece: React.PropTypes.object.isRequired
   },
 
-  getInitialState() {
-    return {
-      createdFromNow: this.createdFromNow(this.props.piece.createdAt)
-    };
-  },
+  // getInitialState() {
+  //   return {
+  //     createdFromNow: this.createdFromNow(this.props.piece.createdAt)
+  //   };
+  // },
 
   createdFromNow(timestamp) {
     if (timestamp === undefined) {
@@ -28,7 +28,7 @@ Piece = React.createClass({
     return (
       <li className="list-group-item">
         {this.props.piece.content}
-        <small className="text-muted pull-right">{this.state.createdFromNow}</small>
+        <small className="text-muted pull-right">{this.createdFromNow(this.props.piece.createdAt)}</small>
       </li>
     );
   },
@@ -39,7 +39,7 @@ Piece = React.createClass({
         {this.props.piece.comment} »
         {' '}
         <span className="text-muted">{this.props.piece.origin.owner}: {this.props.piece.origin.content}</span>
-        <small className="text-muted pull-right">{this.state.createdFromNow}</small>
+        <small className="text-muted pull-right">{this.createdFromNow(this.props.piece.createdAt)}</small>
       </li>
     );
   },
@@ -58,13 +58,13 @@ Piece = React.createClass({
   },
 
   render() {
-    if (Meteor.isClient) {
-      Meteor.setInterval(() => {
-        this.setState({
-          createdFromNow: this.createdFromNow(this.props.piece.createdAt)
-        });
-      }, 60 * 1000);
-    }
+    // if (Meteor.isClient) {
+    //   setInterval(() => {
+    //     this.setState({
+    //       createdFromNow: this.createdFromNow(this.props.piece.createdAt)
+    //     });
+    //   }, 60 * 1000);
+    // }
     return this.renderContent();
   }
 });
