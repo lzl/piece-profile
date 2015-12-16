@@ -18,10 +18,8 @@ Follow = React.createClass({
 
   render() {
     return (
-      <button type="button" className="btn btn-secondary btn-block" onClick={this.handleFollowDefault}>
-        Follow at
-        {' '}
-        <code>{Meteor.settings.public.reader}</code>
+      <button type="button" className="btn btn-primary-outline btn-block" onClick={this.handleFollowDefault}>
+        Follow at {Meteor.settings.public.reader}
       </button>
       // <form onSubmit={this.handleSubmit} >
       //   <div className="input-group">
