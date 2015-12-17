@@ -3,19 +3,30 @@ Piece = React.createClass({
     piece: React.PropTypes.object.isRequired
   },
 
-  // getInitialState() {
-  //   return {
-  //     createdFromNow: this.createdFromNow(this.props.piece.createdAt)
-  //   };
-  // },
+  mixins: [ReactMeteorData],
+
+  getMeteorData() {
+    var createdAt = this.createdFromNow(this.props.piece.createdAt);
+    return {
+      createdAt
+    }
+  },
 
   createdFromNow(timestamp) {
     if (timestamp === undefined) {
       return 'unknown';
     }
     const time = timestamp.getTime();
-    const between = (Date.now() - time) / 1000;
-    if (between < 3600) {
+    let between = undefined;
+
+    if (Meteor.isClient) {
+      between = (TimeSync.serverTime() - time) / 1000;
+    } else {
+      between = (Date.now() - time) / 1000;
+    }
+    if (between < 60) {
+      return ~~(between) + 's';
+    } else if (between < 3600) {
       return ~~(between / 60) + 'm';
     } else if (between < 86400) {
       return ~~(between / 3600) + 'h';
@@ -28,7 +39,7 @@ Piece = React.createClass({
     return (
       <li className="list-group-item">
         {this.props.piece.content}
-        <small className="text-muted pull-right">{this.createdFromNow(this.props.piece.createdAt)}</small>
+        <small className="text-muted pull-right">{this.data.createdAt}</small>
       </li>
     );
   },
@@ -39,7 +50,7 @@ Piece = React.createClass({
         {this.props.piece.comment} »
         {' '}
         <span className="text-muted">{this.props.piece.origin.owner}: {this.props.piece.origin.content}</span>
-        <small className="text-muted pull-right">{this.createdFromNow(this.props.piece.createdAt)}</small>
+        <small className="text-muted pull-right">{this.data.createdAt}</small>
       </li>
     );
   },
@@ -58,13 +69,6 @@ Piece = React.createClass({
   },
 
   render() {
-    // if (Meteor.isClient) {
-    //   setInterval(() => {
-    //     this.setState({
-    //       createdFromNow: this.createdFromNow(this.props.piece.createdAt)
-    //     });
-    //   }, 60 * 1000);
-    // }
     return this.renderContent();
   }
 });
