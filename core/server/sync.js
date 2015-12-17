@@ -1,5 +1,5 @@
-var hostname = Meteor.settings.public.hostname;
-var cloneId = Meteor.settings.public.cloneId;
+var hostname = Meteor.settings.public.profile.hostname;
+var cloneId = Meteor.settings.public.profile.cloneId;
 
 var connection = DDP.connect(`http://${hostname}`);
 var limit = 100;

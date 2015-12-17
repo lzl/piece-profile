@@ -15,7 +15,7 @@ App = React.createClass({
       return <li className="list-group-item">Loading</li>
     }
     return this.data.pieces.map((piece) => {
-      return <Piece key={piece._id} post={piece} />;
+      return <Piece key={piece._id} piece={piece} />;
     });
   },
 

@@ -1,7 +1,11 @@
 {
   "public": {
-    "reader": "localhost:4000",
-    "hostname": "localhost:3000",
-    "cloneId": "Ronq9EjEgA3TkSqwe"
+    "reader": {
+      "hostname": "localhost:4000"
+    },
+    "profile": {
+      "hostname": "localhost:3000",
+      "cloneId": "Ronq9EjEgA3TkSqwe"
+    }
   }
 }

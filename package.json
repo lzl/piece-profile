@@ -4,6 +4,7 @@
   "description": "A personal website powered by Meteor.",
   "scripts": {
     "start": "meteor --port 5000 --settings settings-development.json",
-    "deploy": "meteor deploy piece-profile.meteor.com --settings settings-production.json"
+    "piece": "meteor deploy piece-profile.meteor.com --settings settings-piece.json",
+    "lzl": "meteor deploy lzl.meteor.com --settings settings-lzl.json"
   }
 }

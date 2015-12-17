@@ -1,0 +1,11 @@
+{
+  "public": {
+    "reader": {
+      "hostname": "piece-reader.meteor.com"
+    },
+    "profile": {
+      "hostname": "piece.meteor.com",
+      "cloneId": "492WZqeqCxrDqfG5u"
+    }
+  }
+}
