@@ -28,3 +28,6 @@ kadira:flow-router-ssr
 kadira:react-layout
 peerlibrary:server-autorun
 mizzao:timesync
+
+peerlibrary:reactive-publish
+peerlibrary:subscription-data
