@@ -15,9 +15,9 @@ App = React.createClass({
   },
 
   renderPieces() {
-    if (this.data.loading) {
-      return <li className="list-group-item">Loading</li>
-    }
+    // if (this.data.loading) {
+    //   return <li className="list-group-item">Loading</li>
+    // }
     return this.data.pieces.map((piece) => {
       return <Piece key={piece._id} piece={piece} />;
     });

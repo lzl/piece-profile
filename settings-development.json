@@ -5,7 +5,8 @@
     },
     "profile": {
       "hostname": "localhost:3000",
-      "cloneId": "Ronq9EjEgA3TkSqwe"
+      "cloneId": "Ronq9EjEgA3TkSqwe",
+      "avatar": "/holder.svg"
     }
   }
 }

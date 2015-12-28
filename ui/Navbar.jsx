@@ -1,8 +1,9 @@
 Navbar = React.createClass({
   render() {
+    const avatar = Meteor.settings.public.profile.avatar;
     return (
       <div className="card">
-        <img className="card-img-top" src="/holder.svg" alt="profile avatar" />
+        <img className="card-img-top" src={avatar} alt="profile avatar" />
 
         <div className="card-block">
           <p className="card-text">This is a sub-project of <a href="https://github.com/lzl/piece">Piece</a>.</p>
