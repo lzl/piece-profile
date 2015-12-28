@@ -1,12 +1,23 @@
 {
   "public": {
+    "title": "LZL",
     "reader": {
       "hostname": "piece-reader.meteor.com"
     },
     "profile": {
       "hostname": "piece.meteor.com",
       "cloneId": "492WZqeqCxrDqfG5u",
-      "avatar": "/avatar.png"
+      "avatar": "/avatar.png",
+      "text": [
+        "I'm LZL, interested in Unschooling and Meteor.",
+        "Meteor is a complete open source platform for building web and mobile apps in pure JavaScript.",
+        "Unschooling is creating and maintaining an environment in which natural learning can thrive.",
+        "Then what is LZL?"
+      ],
+      "link": [
+        {"name": "Blog", "url": "https://lizunlong.com/"},
+        {"name": "GitHub", "url": "https://github.com/lzl"}
+      ]
     }
   }
 }
