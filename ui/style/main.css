@@ -5,3 +5,7 @@
 .card img {
   width: 100%;
 }
+
+.text-muted a {
+  color: #4280B5;
+}

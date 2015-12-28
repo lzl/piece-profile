@@ -12,6 +12,22 @@ Piece = React.createClass({
     }
   },
 
+  componentDidMount() {
+    const options = {
+      format: (value, type) => {
+        if (type === 'url' && value.length > 50) {
+          value = value.slice(0, 50) + '…';
+        }
+        return value;
+      },
+      linkAttributes: {
+        rel: 'nofollow'
+      },
+      linkClass: null
+    };
+    $('span.js-content').linkify(options);
+  },
+
   createdFromNow(timestamp) {
     if (timestamp === undefined) {
       return 'unknown';
@@ -39,7 +55,7 @@ Piece = React.createClass({
     return (
       <li className="list-group-item">
         <small className="text-muted pull-right">{this.data.createdAt}</small>
-        {this.props.piece.content}
+        <span className="js-content">{this.props.piece.content}</span>
       </li>
     );
   },
@@ -50,7 +66,7 @@ Piece = React.createClass({
         <small className="text-muted pull-right">{this.data.createdAt}</small>
         {this.props.piece.comment} »
         {' '}
-        <span className="text-muted">{this.props.piece.origin.owner}: {this.props.piece.origin.content}</span>
+        <span className="text-muted js-content">{this.props.piece.origin.owner}: {this.props.piece.origin.content}</span>
       </li>
     );
   },
