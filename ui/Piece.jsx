@@ -55,7 +55,7 @@ Piece = React.createClass({
     return (
       <li className="list-group-item">
         <small className="text-muted pull-right">{this.data.createdAt}</small>
-        <span className="js-content">{this.props.piece.content}</span>
+        <span className="word-wrap js-content">{this.props.piece.content}</span>
       </li>
     );
   },
@@ -66,7 +66,7 @@ Piece = React.createClass({
         <small className="text-muted pull-right">{this.data.createdAt}</small>
         {this.props.piece.comment} »
         {' '}
-        <span className="text-muted js-content">{this.props.piece.origin.owner}: {this.props.piece.origin.content}</span>
+        <span className="text-muted word-wrap js-content">{this.props.piece.origin.owner}: {this.props.piece.origin.content}</span>
       </li>
     );
   },
