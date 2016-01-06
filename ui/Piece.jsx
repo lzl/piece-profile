@@ -36,7 +36,8 @@ Piece = React.createClass({
     let between = undefined;
 
     if (Meteor.isClient) {
-      between = (TimeSync.serverTime() - time) / 1000;
+      const now = TimeSync.serverTime() || Date.now();
+      between = (now - time) / 1000;
     } else {
       between = (Date.now() - time) / 1000;
     }
