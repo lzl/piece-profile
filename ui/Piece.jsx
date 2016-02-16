@@ -67,7 +67,7 @@ Piece = React.createClass({
         <small className="text-muted pull-right">{this.data.createdAt}</small>
         {this.props.piece.comment} »
         {' '}
-        <span className="text-muted word-wrap js-content">{this.props.piece.origin.owner}: {this.props.piece.origin.content}</span>
+        <span className="text-muted word-wrap js-content">{this.props.piece.origin.username}: {this.props.piece.origin.content}</span>
       </li>
     );
   },

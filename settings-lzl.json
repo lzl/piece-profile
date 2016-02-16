@@ -2,7 +2,7 @@
   "public": {
     "title": "LZL",
     "reader": {
-      "hostname": "piece-reader.meteor.com"
+      "hostname": "piece.meteor.com"
     },
     "profile": {
       "hostname": "piece.meteor.com",

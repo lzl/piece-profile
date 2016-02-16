@@ -14,7 +14,7 @@ Follow = React.createClass({
     const reader = Meteor.settings.public.reader.hostname;
     const hostname = Meteor.settings.public.profile.hostname;
     const cloneId = Meteor.settings.public.profile.cloneId;
-    const url = `https://${reader}/follow?hostname=${hostname}&userId=${cloneId}`;
+    const url = `http://${reader}/follow?hostname=${hostname}&userId=${cloneId}`;
     window.open(url, "_blank");
   },
 
